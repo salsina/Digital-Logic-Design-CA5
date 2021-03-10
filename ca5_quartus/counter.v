@@ -1,0 +1,10 @@
+module counter(input en,clk,output reg done);
+  reg [3:0] count_num;
+  always@(posedge clk,posedge en)begin
+    if(en == 0)begin done = 0;count_num = 6'b0;end
+    else begin
+      if(count_num == 11)done =1;
+      else count_num = count_num + 1;
+    end
+  end
+endmodule

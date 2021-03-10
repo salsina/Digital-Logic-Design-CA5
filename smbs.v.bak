@@ -1,0 +1,13 @@
+module smbsv(input inp,input [3:0]PB,input [1:0]LB,output reg[15:0]W);
+  integer i=0;
+  always @(PB,LB)begin
+    for(i=0;i<4;i=i+1)begin
+      if (PB[i] == 1)begin
+        W[i*4 + LB]=inp;
+      end
+    end
+  end
+endmodule
+
+
+
